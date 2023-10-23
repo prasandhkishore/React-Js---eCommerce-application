@@ -31,6 +31,7 @@ class Login extends Component {
         this.setState({email:e.target.value})
     }
 
+    
     handelPassword=(e)=>{
         this.setState({password:e.target.value})
     }
