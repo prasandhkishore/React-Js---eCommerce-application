@@ -82,3 +82,6 @@ p a:hover{
     color: darkblue;
     font-weight: 700;
 }
+.danger{
+    color: red;
+}

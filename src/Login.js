@@ -7,34 +7,52 @@ class Login extends Component {
         this.state ={
             email: null,
             password: null,
+            submitClicked: false,
+              emailError: "",
+              passwordError: ""
         }
 
         
     }
 
-    // handelChange=(e)=>{
-    //     this.setState({
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
+    handelChange=(e)=>{
+        this.setState({
+            [e.target.name]: e.target.value,
+            [e.target.name+"error"]: ""
 
-    // handelSubmit=(e)=>{
-    //     if(e.match("")){
-    //         setError(true)
-    //     }else{
-    //         setError(false)
-    //     }
-
-    // }
-
-    handelEmail=(e)=>{
-        this.setState({email:e.target.value})
+        })
     }
+
+    handelSubmit=(e)=>{
+        if (
+            this.state.email &&
+            this.state.password 
+          ) {
+            this.setState({
+              submitClicked: true
+            });
+          } else {
+            if (!this.state.email) {
+              this.setState({
+                emailError: "Enter the email"
+              });
+            }
+            if (!this.state.password) {
+              this.setState({
+                passwordError: "Enter the password"
+              });
+             }
+        }
+    }
+
+    // handelEmail=(e)=>{
+    //     this.setState({email:e.target.value, })
+    // }
 
     
-    handelPassword=(e)=>{
-        this.setState({password:e.target.value})
-    }
+    // handelPassword=(e)=>{
+    //     this.setState({password:e.target.value})
+    // }
 
     render() { 
         return ( 
@@ -46,20 +64,21 @@ class Login extends Component {
                         <div className="input-box">
                             <fieldset>
                                 <legend>Email</legend>  
-                                <input type="text" placeholder="Enter your email" name="email" value={this.state.email} onChange={(e)=>{this.handelEmail(e)}} required/>{this.state.email}
+                                <input type="text" placeholder="Enter your email" name="email" value={this.state.email} onChange={(e)=>{this.handelChange(e)}} required/>
                                
                             </fieldset>
                         </div>
+                        <p className="danger">{!this.state.email ? this.state.emailError : ""}</p>
                         <div className="input-box">
                             <fieldset>
                                 <legend>Password</legend>                                
-                                <input type="password" placeholder="Enter your password" name="password" value={this.state.password} onChange={(e)=>{this.handelPassword(e)}} required/>                               
+                                <input type="password" placeholder="Enter your password" name="password" value={this.state.password} onChange={(e)=>{this.handelChange(e)}} required/>                               
                             </fieldset>
                         </div>
-                        
+                        <p className="danger">{!this.state.password ? this.state.passwordError : ""}</p>
 
                         <div className="button">
-                            <button type="submit">Login</button>
+                            <button type="submit" onClick={this.handelSubmit} disabled={!this.state.email && !this.state.password}>Login</button>
                         </div>
                         <p>New to website? <br/><a href="#">Register</a></p>
                     </form>              
