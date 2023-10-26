@@ -1,0 +1,159 @@
+.item-box{
+    display: flex;
+    height: 50vh;
+    flex-direction: row;
+    justify-content: space-between ;
+    gap: 10px;
+    margin:0 10%;
+    border-bottom: 1px solid black;
+}
+
+.image-box {
+    flex: 3;
+    padding: 10px;
+}
+.image-box > img{    
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+}
+.right-pane{
+    display: flex;
+    flex:5;
+    background-color: transparent;
+    text-align: left ;
+    padding: 20px;
+}
+.discription-box{
+    flex: 6;
+}
+.discription-box h1{
+    font-weight: 700;
+    font-size: 34px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.product-discription p{
+    font-size: 18px;    
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.price,.category,.stock p{
+    font-size: 17px;  
+    font-weight: 550;
+    padding-bottom: 10px;
+
+}
+
+.price .product-price{
+    font-size: 26px;
+    font-weight: 900;
+}
+.price .product-off{
+    font-size: 16px;
+    font-weight: 550;
+    color: tomato;
+}
+.product-discription h6{
+    font-size: 20px;
+    font-weight: 500;
+}
+.category .product-category{
+    font-weight: 650;
+    color: darkblue;
+    text-transform: capitalize;
+}
+.stock .product-stock{
+    font-size: 20px;
+    font-weight: 850;
+    color: rgb(84, 158, 0);
+    text-transform: capitalize;
+}
+.action-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 2;
+    padding-left: 10px;
+}
+
+.action-button button{
+    width: 100%;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.edit-button{
+    background-color: rgb(82, 82, 212);
+    color: beige;
+}
+.edit-button:hover{
+    color: black;
+}
+.delete-button{
+    background-color: rgb(228, 89, 54);
+    color: beige;
+}
+.delete-button:hover{
+    color: black;
+}
+
+p{
+        white-space: nowrap;          /* Prevent text from wrapping to the next line */
+        overflow: hidden;            /* Hide any overflowed text */
+        text-overflow: ellipsis;     /* Display an ellipsis (...) when text overflows */
+        max-width: 400px;            /* Set the maximum width for the paragraph */
+      
+}
+h1{
+    white-space: nowrap;          /* Prevent text from wrapping to the next line */
+    overflow: hidden;            /* Hide any overflowed text */
+    text-overflow: ellipsis;     /* Display an ellipsis (...) when text overflows */
+    max-width: 400px;            /* Set the maximum width for the paragraph */
+  
+}
+
+
+.add-item{
+    position: absolute;
+    top:75px;
+    right:47px;
+    font-size: 18px;
+}
+.add-item button{
+    font-weight: 600;
+    padding:10px 20px;
+    background-color:brown;
+    border-radius: 5px;
+    color: beige;
+    cursor: pointer;
+}
+.add-item button:hover{
+    color:black;
+    border: 3px solid brown;
+}
+.display-button{
+    width:200px;
+    font-size: 18px;
+    padding:10px 20px;
+    background-color:rgb(50, 42, 165);
+    border-radius: 5px;
+    color: beige;
+    cursor: pointer;
+}
+.display-button button{
+    font-weight: 600;
+    background-color: rgb(17, 17, 236);
+}
+.display-button button:hover{
+    color:black;
+}
+h2{
+    text-align: left;
+    padding-left: 50px;
+}

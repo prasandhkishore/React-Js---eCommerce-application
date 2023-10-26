@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 class Login extends Component {
     constructor(props) {
@@ -64,23 +64,25 @@ class Login extends Component {
                         <div className="input-box">
                             <fieldset>
                                 <legend>Email</legend>  
-                                <input type="text" placeholder="Enter your email" name="email" value={this.state.email} onChange={(e)=>{this.handelChange(e)}} required/>
-                               
+                                <input type="text" placeholder="Enter your email" name="email" value={this.state.email}  required/>
+                                {/* onChange={(e)=>{this.handelChange(e)}} */}
                             </fieldset>
                         </div>
                         <p className="danger">{!this.state.email ? this.state.emailError : ""}</p>
                         <div className="input-box">
                             <fieldset>
                                 <legend>Password</legend>                                
-                                <input type="password" placeholder="Enter your password" name="password" value={this.state.password} onChange={(e)=>{this.handelChange(e)}} required/>                               
+                                <input type="password" placeholder="Enter your password" name="password" value={this.state.password} required/>    
+                                {/* onChange={(e)=>{this.handelChange(e)}}                            */}
                             </fieldset>
                         </div>
                         <p className="danger">{!this.state.password ? this.state.passwordError : ""}</p>
 
                         <div className="button">
-                            <button type="submit" onClick={this.handelSubmit} disabled={!this.state.email && !this.state.password}>Login</button>
+                            <button type="submit" >Login</button>
+                            {/* onClick={this.handelSubmit} disabled={!this.state.email && !this.state.password} */}
                         </div>
-                        <p>New to website? <br/><a href="#">Register</a></p>
+                        <p>New to website? <br/><Link to='Signin'>Register</Link></p>
                     </form>              
                 </div>
             </div>
